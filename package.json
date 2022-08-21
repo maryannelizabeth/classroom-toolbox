@@ -1,0 +1,20 @@
+{
+  "name": "classroom-toolbox",
+  "version": "1.0.0",
+  "description": "Personal project to build tools for the classroom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maryannelizabeth/classroom-toolbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maryannelizabeth/classroom-toolbox/issues"
+  },
+  "homepage": "https://github.com/maryannelizabeth/classroom-toolbox#readme"
+}
