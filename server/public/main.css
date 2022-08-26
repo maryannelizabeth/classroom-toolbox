@@ -1,7 +1,135 @@
 body {
-background-color:aqua
+background-color: pink;
+font-family: 'Rubik', sans-serif;
+
 }
 
 h1{
-  color:pink
+  color: #E38B29
 }
+
+/************** HEADER ******************/
+.header {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.toolkitImg {
+  width: 50px;
+  transform: rotate(15deg);
+  position: relative;
+  top: 10px;
+}
+
+
+/************** HOMEPAGE ***************/
+
+.homepage{
+  width: 100%;
+  height: auto;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+
+}
+
+.timerDiv {
+  display: flex;
+  width: 150px;
+  height:200px;
+  margin: 20px;
+  font-size: 30;
+  text-align: center;
+
+}
+
+.diceDiv {
+  display: flex;
+  width: 150px;
+  height:200px;
+  margin: 20px;
+  font-size: 30;
+  text-align: center;
+  }
+
+ .spinTheWheelDiv {
+  display: flex;
+  width: 150px;
+  height: 200px;
+  margin: 20px;
+  font-size: 30;
+  text-align: center;
+  }
+
+  .img:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+  
+  /******* Dice page ***********/
+
+  .dicePage {
+  width: 100%;
+  height: auto;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+  }
+
+  .buttonDiv{
+    width: 100%;
+    height: auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+
+  }
+
+  .diceButton {
+    margin:auto;
+
+  
+  }
+
+
+  /* @media (768px){
+      .diceDiv {
+        width:90%;
+        background-color: pink;
+      }
+      .timerDiv {
+        width:90%;
+      }
+      .spinTheWheelDiv {
+        width:90%;
+      }}
+  
+
+  @media (min-width:768px){
+    .diceDiv {
+      width:90%;
+    }
+    .timerDiv {
+      width:90%;
+    }
+    .spinTheWheelDiv {
+      width:90%;
+    }}
+
+  @media (min-width:1200px){
+  .diceDiv {
+    width:40%;
+    background-color: blue;
+  }
+  .timerDiv {
+    width:40%;
+  }
+  .spinTheWheelDiv {
+    width:40%;
+  }}
+   */
+    
