@@ -1,10 +1,14 @@
-import React, { Fragment } from 'react'
+import React, { useState } from 'react'
+import UserTimerInput from './UserTimerInput'
+import TimerDisplay from './TimerDisplay'
 
 function Timer() {
   let { startingTime, setStartingTime } = useState(<UserTimerInput />)
   console.log(startingTime)
 
   let time = setStartingTime * 60
+  // const countdownEl = document.getElementById('countdown')
+  console.log(time)
   function updateCountdown() {
     const minutes = Math.floor(time / 60)
     let seconds = time % 60
@@ -20,27 +24,13 @@ function Timer() {
     updateCountdown()
     console.log('clicked')
   }
-  const TimerDisplay = (props) => {
-    return (
-      <Fragment>
-        <section className="timer-container">
-          <section className="timer">
-            <div className="clock">
-              <section>
-                <h1>{props.time}</h1>
-              </section>
-            </div>
-          </section>
-        </section>
-      </Fragment>
-    )
-  }
 
-  TimerDisplay.defaultProps = {
-    timerHours: '00',
-    timerMinutes: '00',
-    timerSeconds: '00',
-  }
+  return (
+    <div>
+      Timer
+      <Timer />
+    </div>
+  )
 }
 
 export default Timer
