@@ -9,15 +9,19 @@ function RollOneDice() {
         <div className="diceHeading"></div>
         <div className="diceRolling">
           <img id="dice1" className="diceOne" src={imgSrc} alt="dice" />
-          <button
-            onClick={() => {
-              setImgSrc('./images/dice' + randomNumber1 + '.png')
-              console.log(imgSrc)
-            }}
-          >
-            Roll Dice!
-          </button>
         </div>{' '}
+      </div>{' '}
+      <div className="rollDiceButtonDiv">
+        {' '}
+        <button
+          className="rollDiceButton"
+          onClick={() => {
+            setImgSrc('./images/dice' + randomNumber1 + '.png')
+            console.log(imgSrc)
+          }}
+        >
+          Roll Dice!
+        </button>
       </div>
     </>
   )

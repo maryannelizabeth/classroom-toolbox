@@ -251,12 +251,15 @@ function RollOneDice() {
     className: "diceOne",
     src: imgSrc,
     alt: "dice"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+  })), ' '), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "rollDiceButtonDiv"
+  }, ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: "rollDiceButton",
     onClick: function onClick() {
       setImgSrc('./images/dice' + randomNumber1 + '.png');
       console.log(imgSrc);
     }
-  }, "Roll Dice!")), ' '));
+  }, "Roll Dice!")));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RollOneDice);
@@ -274,9 +277,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 function RollThreeDice() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("./images/dice2.png"),
+      _useState2 = _slicedToArray(_useState, 2),
+      img1Src = _useState2[0],
+      setImg1Src = _useState2[1];
+
+  var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("./images/dice4.png"),
+      _useState4 = _slicedToArray(_useState3, 2),
+      img2Src = _useState4[0],
+      setImg2Src = _useState4[1];
+
+  var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("./images/dice4.png"),
+      _useState6 = _slicedToArray(_useState5, 2),
+      img3Src = _useState6[0],
+      setImg3Src = _useState6[1];
+
+  var randomNumber3 = Math.floor(Math.random() * 6) + 1;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "dicePage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -285,17 +320,29 @@ function RollThreeDice() {
     className: "diceRolling"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     className: "diceOne",
-    src: "./images/dice1.png",
+    src: img1Src,
     alt: "dice"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     className: "diceOne",
-    src: "./images/dice2.png",
+    src: img2Src,
     alt: "dice"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     className: "diceOne",
-    src: "./images/dice3.png",
+    src: img3Src,
     alt: "dice"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Roll Dice!")), ' '));
+  })), ' '), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "rollDiceButtonDiv"
+  }, ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: "rollDiceButton",
+    onClick: function onClick() {
+      setImg1Src('./images/dice' + randomNumber1 + '.png');
+      console.log(img1Src);
+      setImg2Src('./images/dice' + randomNumber2 + '.png');
+      console.log(img2Src);
+      setImg3Src('./images/dice' + randomNumber3 + '.png');
+      console.log(img3Src);
+    }
+  }, "Roll Dice!")));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RollThreeDice);
@@ -313,24 +360,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 function RollTwoDice() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("./images/dice2.png"),
+      _useState2 = _slicedToArray(_useState, 2),
+      img1Src = _useState2[0],
+      setImg1Src = _useState2[1];
+
+  var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("./images/dice4.png"),
+      _useState4 = _slicedToArray(_useState3, 2),
+      img2Src = _useState4[0],
+      setImg2Src = _useState4[1];
+
+  var randomNumber2 = Math.floor(Math.random() * 6) + 1;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "dicePage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "diceHeading"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "diceRolling"
+    className: "twoDiceRolling"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     className: "diceOne",
-    src: "./images/dice1.png",
+    src: img1Src,
     alt: "dice"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     className: "diceOne",
-    src: "./images/dice2.png",
+    src: img2Src,
     alt: "dice"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Roll Dice!")), " "));
+  })), ' '), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "rollDiceButtonDiv"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: "rollDiceButton",
+    onClick: function onClick() {
+      setImg1Src('./images/dice' + randomNumber1 + '.png');
+      console.log(img1Src);
+      setImg2Src('./images/dice' + randomNumber2 + '.png');
+      console.log(img2Src);
+    }
+  }, "Roll Dice!")));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RollTwoDice);

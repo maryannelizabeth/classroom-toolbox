@@ -1,5 +1,5 @@
 body {
-background-color: pink;
+background-color: #FDEEDC;
 font-family: 'Rubik', sans-serif;
 
 }
@@ -68,7 +68,7 @@ h1{
   }
 
   
-  /******* Dice page ***********/
+  /******* Dice home page ***********/
 
   .dicePage {
   width: 100%;
@@ -93,6 +93,49 @@ h1{
     margin:auto;
 
   
+  }
+
+  /*******  Dice rolling pages  *********/
+
+  .rollDiceButtonDiv {
+    display:flex;
+    height: auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+    margin-top: 30px;
+ 
+
+  }
+
+  .diceRolling{
+    width: 100%;
+    height: auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+    margin-left:20%;
+    margin-right:20%;
+  }
+
+  .twoDiceRolling{
+    width: 100%;
+    height: auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+    margin-left:31%;
+    margin-right:31%;
+    
+
+  }
+
+  .diceOne{
+    margin-top:20px;
+
   }
 
 

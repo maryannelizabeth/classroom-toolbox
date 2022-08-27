@@ -26,6 +26,7 @@ function Footer() {
       >
         Toolbox icons created by Freepik - Flaticon
       </a>
+      dice roll <a href="https://www.flaticon.com/free-icons/bet" title="Bet icons">Bet icons created by bearicons - Flaticon</a>
     </p>
   )
 }
