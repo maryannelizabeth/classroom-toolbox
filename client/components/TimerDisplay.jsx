@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-const ClockShown = ({ timerHours, timerMinutes, timerSeconds }) => {
+const TimerDisplay = ({ timerHours, timerMinutes, timerSeconds }) => {
   return (
     <Fragment>
       <section className="timer-container">
@@ -27,10 +27,10 @@ const ClockShown = ({ timerHours, timerMinutes, timerSeconds }) => {
   )
 }
 
-ClockShown.defaultProps = {
+TimerDisplay.defaultProps = {
   timerHours: '00',
   timerMinutes: '00',
   timerSeconds: '00',
 }
 
-export default ClockShown
+export default TimerDisplay

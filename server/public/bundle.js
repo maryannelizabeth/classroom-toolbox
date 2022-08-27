@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _RollTwoDice__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./RollTwoDice */ "./client/components/RollTwoDice.jsx");
 /* harmony import */ var _RollThreeDice__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./RollThreeDice */ "./client/components/RollThreeDice.jsx");
 /* harmony import */ var _SpinTheWheel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./SpinTheWheel */ "./client/components/SpinTheWheel.jsx");
-/* harmony import */ var _Timer1__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Timer1 */ "./client/components/Timer1.jsx");
+/* harmony import */ var _CountdownTimer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./CountdownTimer */ "./client/components/CountdownTimer.jsx");
 
 
 
@@ -44,7 +44,7 @@ function App() {
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SpinTheWheel__WEBPACK_IMPORTED_MODULE_8__["default"], null)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
     path: "/timer",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Timer1__WEBPACK_IMPORTED_MODULE_9__["default"], null)
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CountdownTimer__WEBPACK_IMPORTED_MODULE_9__["default"], null)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
     path: "/dice",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Dice__WEBPACK_IMPORTED_MODULE_4__["default"], null)
@@ -64,10 +64,10 @@ function App() {
 
 /***/ }),
 
-/***/ "./client/components/ClockShown.jsx":
-/*!******************************************!*\
-  !*** ./client/components/ClockShown.jsx ***!
-  \******************************************/
+/***/ "./client/components/CountdownTimer.jsx":
+/*!**********************************************!*\
+  !*** ./client/components/CountdownTimer.jsx ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -75,27 +75,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _TimerDisplay__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TimerDisplay */ "./client/components/TimerDisplay.jsx");
 
+ //import { useForm } from 'react-hook-form'
 
-var ClockShown = function ClockShown(_ref) {
-  var timerHours = _ref.timerHours,
-      timerMinutes = _ref.timerMinutes,
-      timerSeconds = _ref.timerSeconds;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
-    className: "timer-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
-    className: "timer"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "clock"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, timerHours), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("small", null, "Hours")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, ":"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, timerMinutes), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("small", null, "Minutes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, ":"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, timerSeconds), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("small", null, "Seconds"))))));
-};
+function UserTimerInput() {
+  // const handleSubmit = useForm()
+  // const onSubmit = (data, e) => console.log(data, e)
+  // const onError = (errors, e) => console.log(errors, e)
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Form"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+    className: "form",
+    action: "",
+    method: "post" //onSubmit={handleSubmit(onSubmit, onError)}
 
-ClockShown.defaultProps = {
-  timerHours: '00',
-  timerMinutes: '00',
-  timerSeconds: '00'
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ClockShown);
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Time:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "number",
+    name: "time",
+    min: "1",
+    max: "10000",
+    required: true
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "submit",
+    value: "submit"
+  }, "Start Countdown!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TimerDisplay__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UserTimerInput);
 
 /***/ }),
 
@@ -475,10 +480,10 @@ function SpinTheWheel() {
 
 /***/ }),
 
-/***/ "./client/components/Timer1.jsx":
-/*!**************************************!*\
-  !*** ./client/components/Timer1.jsx ***!
-  \**************************************/
+/***/ "./client/components/TimerDisplay.jsx":
+/*!********************************************!*\
+  !*** ./client/components/TimerDisplay.jsx ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -486,55 +491,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _ClockShown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ClockShown */ "./client/components/ClockShown.jsx");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
+var TimerDisplay = function TimerDisplay(_ref) {
+  var timerHours = _ref.timerHours,
+      timerMinutes = _ref.timerMinutes,
+      timerSeconds = _ref.timerSeconds;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+    className: "timer-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+    className: "timer"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "clock"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, timerHours), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("small", null, "Hours")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, ":"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, timerMinutes), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("small", null, "Minutes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, ":"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, timerSeconds), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("small", null, "Seconds"))))));
+};
 
-
-function Clock() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
-      _useState2 = _slicedToArray(_useState, 2),
-      timerHours = _useState2[0],
-      setTimerHours = _useState2[1];
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
-      _useState4 = _slicedToArray(_useState3, 2),
-      timerMinutes = _useState4[0],
-      setTimerMinutes = _useState4[1];
-
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
-      _useState6 = _slicedToArray(_useState5, 2),
-      timerSeconds = _useState6[0],
-      setTimerSeconds = _useState6[1];
-
-  var interval;
-
-  var startTimer = function startTimer() {
-    var countDownDate = new Date().getTime();
-    interval = setInterval(function () {
-      var now = new Date().getTime();
-    });
-  };
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ClockShown__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    timerHours: timerHours,
-    timerMinutes: timerMinutes,
-    timerSeconds: timerSeconds
-  }));
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Clock);
+TimerDisplay.defaultProps = {
+  timerHours: '00',
+  timerMinutes: '00',
+  timerSeconds: '00'
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TimerDisplay);
 
 /***/ }),
 

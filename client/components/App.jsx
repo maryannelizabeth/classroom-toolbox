@@ -9,7 +9,8 @@ import RollOneDice from './RollOneDice'
 import RollTwoDice from './RollTwoDice'
 import RollThreeDice from './RollThreeDice'
 import SpinTheWheel from './SpinTheWheel'
-import Clock from './Timer1'
+
+import UserTimerInput from './CountdownTimer'
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/spinthewheel" element={<SpinTheWheel />} />
-        <Route path="/timer" element={<Clock />} />
+        <Route path="/timer" element={<UserTimerInput />} />
         <Route path="/dice" element={<DiceHome />} />
         <Route path="/rollonedice" element={<RollOneDice />} />
         <Route path="/rolltwodice" element={<RollTwoDice />} />
