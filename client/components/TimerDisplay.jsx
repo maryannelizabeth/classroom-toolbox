@@ -1,12 +1,14 @@
 import React, { Fragment } from 'react'
+//import UserTimerInput from './UserTimerInput'
 
-const TimerDisplay = ({ timerHours, timerMinutes, timerSeconds }) => {
+const TimerDisplay = (props) => {
   return (
     <Fragment>
       <section className="timer-container">
         <section className="timer">
           <div className="clock">
-            <section>
+            <h1>{props.time}</h1>
+            {/* <section>
               <p>{timerHours}</p>
               <small>Hours</small>
             </section>
@@ -19,7 +21,7 @@ const TimerDisplay = ({ timerHours, timerMinutes, timerSeconds }) => {
             <section>
               <p>{timerSeconds}</p>
               <small>Seconds</small>
-            </section>
+            </section> */}
           </div>
         </section>
       </section>

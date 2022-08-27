@@ -10,7 +10,7 @@ import RollTwoDice from './RollTwoDice'
 import RollThreeDice from './RollThreeDice'
 import SpinTheWheel from './SpinTheWheel'
 
-import UserTimerInput from './CountdownTimer'
+import UserTimerInput from './UserTimerInput'
 
 function App() {
   return (
