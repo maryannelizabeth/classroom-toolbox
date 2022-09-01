@@ -7,21 +7,21 @@ const TimerDisplay = (props) => {
       <section className="timer-container">
         <section className="timer">
           <div className="clock">
-            <h1>{props.time}</h1>
+            {/*<h1>{props.time}</h1>*/}
             {/* <section>
-              <p>{timerHours}</p>
+              <p>{props.timerHours}</p>
               <small>Hours</small>
             </section>
             <span>:</span>
             <section>
-              <p>{timerMinutes}</p>
+              <p>{props.timerMinutes}</p>
               <small>Minutes</small>
             </section>
-            <span>:</span>
+            <span>:</span> */}
             <section>
-              <p>{timerSeconds}</p>
+              <p>{props.timerSeconds}</p>
               <small>Seconds</small>
-            </section> */}
+            </section>
           </div>
         </section>
       </section>
@@ -32,7 +32,7 @@ const TimerDisplay = (props) => {
 TimerDisplay.defaultProps = {
   timerHours: '00',
   timerMinutes: '00',
-  timerSeconds: '00',
+  // timerSeconds: '00',
 }
 
 export default TimerDisplay

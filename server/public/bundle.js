@@ -460,13 +460,13 @@ var TimerDisplay = function TimerDisplay(props) {
     className: "timer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "clock"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, props.time)))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, props.timerSeconds), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("small", null, "Seconds"))))));
 };
 
 TimerDisplay.defaultProps = {
   timerHours: '00',
-  timerMinutes: '00',
-  timerSeconds: '00'
+  timerMinutes: '00' // timerSeconds: '00',
+
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TimerDisplay);
 
@@ -500,10 +500,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
  //import { useForm } from 'react-hook-form'
 
 function UserTimerInput() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+  // const [hours, setHours] = useState(0)
+  // const [minutes, setMinutes] = useState(0)
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('00'),
       _useState2 = _slicedToArray(_useState, 2),
-      time = _useState2[0],
-      setTime = _useState2[1];
+      seconds = _useState2[0],
+      setSeconds = _useState2[1];
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
@@ -511,11 +513,39 @@ function UserTimerInput() {
       setPrint = _useState4[1]; // const handleSubmit = useForm()
   // const onSubmit = (data, e) => console.log(data, e)
   // const onError = (errors, e) => console.log(errors, e)
+  // function getHourInput(hourInput) {
+  //   setHours(hourInput.target.value)
+  //   console.log(hourInput)
+  //   setPrint(false)
+  // }
+  // function getMinuteInput(minuteInput) {
+  //   setMinutes(minuteInput.target.value)
+  //   console.log(minuteInput)
+  //   setPrint(false)
+  // }
 
 
-  function getInput(input) {
-    setTime(input.target.value);
+  function getSecondInput(input) {
+    setSeconds(input.target.value);
     setPrint(false);
+  }
+
+  function updateCountdown() {
+    var seconds = seconds < 10 ? '0' + seconds : seconds;
+    seconds--;
+    console.log(seconds);
+  }
+
+  var startClick = function startClick() {
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    console.log('clicked start click');
+  };
+
+  function clickHandler(evt) {
+    evt.preventDefault();
+    console.log('click');
+    setPrint(true);
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Form"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
@@ -523,22 +553,25 @@ function UserTimerInput() {
     action: "" //method="post"
     //onSubmit={handleSubmit(onSubmit, onError)}
 
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Time:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Seconds:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "number",
-    name: "time",
+    name: "seconds",
     min: "1",
-    max: "10000",
+    max: "59",
     required: true,
-    onChange: getInput
+    onChange: getSecondInput
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     type: "submit",
     value: "submit",
-    onClick: function onClick() {
-      return setPrint(true);
-    }
-  }, "Start Countdown!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TimerDisplay__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    time: print ? time : 0
-  }));
+    onClick: clickHandler
+  }, "Set Time!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TimerDisplay__WEBPACK_IMPORTED_MODULE_1__["default"] //timerHours={print ? hours : 0}
+  //timerMinutes={print ? minutes : 0}
+  , {
+    timerSeconds: print ? seconds : 0
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "button",
+    onClick: startClick
+  }, "Start countdown"));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UserTimerInput);

@@ -1,21 +1,22 @@
 import React, { useState } from 'react'
 
 function Timer() {
-  let { startingMinutes, setStartingMinutes } = useState(
-    <p id="countdown">00:00</p>
-  )
+  let { seconds, setSeconds } = useState('00')
+  // let { startingMinutes, setStartingMinutes } = useState(
+  //   "00"
+  // )
 
-  let time = setStartingMinutes * 60
+  //let time = setStartingMinutes * 60
   // const countdownEl = document.getElementById('countdown')
-  console.log(time)
+  // console.log(time)
   function updateCountdown() {
-    const minutes = Math.floor(time / 60)
-    let seconds = time % 60
+    //const minutes = Math.floor(time / 60)
+    //let seconds = time % 60
 
     seconds = seconds < 10 ? '0' + seconds : seconds
 
-    setStartingMinutes = `${minutes}: ${seconds}`
-    time--
+    // setStartingMinutes = `${minutes}: ${seconds}`
+    seconds--
   }
 
   setInterval(updateCountdown, 1000)
