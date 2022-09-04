@@ -2,24 +2,24 @@ import React, { Fragment } from 'react'
 //import UserTimerInput from './UserTimerInput'
 
 const TimerDisplay = (props) => {
+  const countdownEl = document.getElementById('countdown')
   return (
     <Fragment>
       <section className="timer-container">
         <section className="timer">
           <div className="clock">
-            {/*<h1>{props.time}</h1>*/}
             {/* <section>
               <p>{props.timerHours}</p>
               <small>Hours</small>
             </section>
-            <span>:</span>
-            <section>
-              <p>{props.timerMinutes}</p>
-              <small>Minutes</small>
-            </section>
             <span>:</span> */}
             <section>
-              <p>{props.timerSeconds}</p>
+              <p className="countdown">{props.timerMinutes}</p>
+              <small>Minutes</small>
+            </section>
+            <span>:</span>
+            <section>
+              <p className="countdown">{props.timerSeconds}</p>
               <small>Seconds</small>
             </section>
           </div>
@@ -30,9 +30,9 @@ const TimerDisplay = (props) => {
 }
 
 TimerDisplay.defaultProps = {
-  timerHours: '00',
+  // timerHours: '00',
   timerMinutes: '00',
-  // timerSeconds: '00',
+  timerSeconds: '00',
 }
 
 export default TimerDisplay
