@@ -1,7 +1,13 @@
 import React from 'react'
+import UserInputRandomGenerator from './UserInputRandomGenerator'
 
 function SpinTheWheel() {
-  return <div>RandomGen</div>
+  return (
+    <div>
+      Random Generator
+      <UserInputRandomGenerator />
+    </div>
+  )
 }
 
 export default SpinTheWheel
