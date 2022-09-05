@@ -486,7 +486,17 @@ function StartTimer(_ref) {
       setMinutes = _ref.setMinutes;
 
   function updateCountdown() {
-    setSeconds(seconds--);
+    // if (minutes == 0 && seconds == 0) {
+    //   setMinutes('00') && setSeconds('00')
+    // } else
+    if (seconds == 0) {
+      console.log('sero');
+      seconds = 59;
+    } else if (seconds != 0) {
+      console.log('not zero');
+      setSeconds(seconds--);
+    }
+
     console.log(seconds);
   }
 
