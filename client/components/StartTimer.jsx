@@ -1,10 +1,12 @@
 import React from 'react'
 
-function StartTimer() {
+function StartTimer({ seconds, setSeconds, minutes, setMinutes }) {
   function updateCountdown() {
-    let seconds = seconds < 10 ? '0' + seconds : seconds
-    seconds--
+    setSeconds(seconds--)
     console.log(seconds)
+    // let seconds = seconds < 10 ? '0' + seconds : seconds
+    // seconds--
+    // console.log(seconds)
   }
   let startClick = () => {
     updateCountdown()

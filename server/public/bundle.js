@@ -479,11 +479,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 
-function StartTimer() {
+function StartTimer(_ref) {
+  var seconds = _ref.seconds,
+      setSeconds = _ref.setSeconds,
+      minutes = _ref.minutes,
+      setMinutes = _ref.setMinutes;
+
   function updateCountdown() {
-    var seconds = seconds < 10 ? '0' + seconds : seconds;
-    seconds--;
-    console.log(seconds);
+    setSeconds(seconds--);
+    console.log(seconds); // let seconds = seconds < 10 ? '0' + seconds : seconds
+    // seconds--
+    // console.log(seconds)
   }
 
   var startClick = function startClick() {
@@ -645,7 +651,8 @@ function UserTimerInput() {
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState4 = _slicedToArray(_useState3, 2),
       seconds = _useState4[0],
-      setSeconds = _useState4[1];
+      setSeconds = _useState4[1]; // const time = { seconds, setSeconds, minutes, setMinutes }
+
 
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState6 = _slicedToArray(_useState5, 2),
@@ -658,13 +665,13 @@ function UserTimerInput() {
 
 
   function getMinuteInput(minuteInput) {
-    setMinutes(minuteInput.target.value);
-    console.log(minuteInput);
+    setMinutes(Number(minuteInput.target.value)); //  console.log(minuteInput)
+
     setPrint(false);
   }
 
   function getSecondInput(input) {
-    setSeconds(input.target.value);
+    setSeconds(Number(input.target.value));
     setPrint(false);
   }
 
@@ -681,14 +688,16 @@ function UserTimerInput() {
     type: "number",
     name: "minutes",
     min: "1",
-    max: "59",
+    max: "59" //value={minutes}
+    ,
     required: true,
     onChange: getMinuteInput
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Seconds:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "number",
     name: "seconds",
     min: "1",
-    max: "59",
+    max: "59" //value={seconds}
+    ,
     required: true,
     onChange: getSecondInput
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
@@ -699,7 +708,12 @@ function UserTimerInput() {
   , {
     timerMinutes: print ? minutes : 0,
     timerSeconds: print ? seconds : 0
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_StartTimer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_StartTimer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    seconds: seconds,
+    minutes: minutes,
+    setMinutes: setMinutes,
+    setSeconds: setSeconds
+  }));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UserTimerInput);

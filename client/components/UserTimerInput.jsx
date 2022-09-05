@@ -6,6 +6,7 @@ function UserTimerInput() {
   // const [hours, setHours] = useState(0)
   const [minutes, setMinutes] = useState(0)
   let [seconds, setSeconds] = useState(0)
+  // const time = { seconds, setSeconds, minutes, setMinutes }
 
   const [print, setPrint] = useState(false)
 
@@ -15,12 +16,12 @@ function UserTimerInput() {
   //   setPrint(false)
   // }
   function getMinuteInput(minuteInput) {
-    setMinutes(minuteInput.target.value)
-    console.log(minuteInput)
+    setMinutes(Number(minuteInput.target.value))
+    //  console.log(minuteInput)
     setPrint(false)
   }
   function getSecondInput(input) {
-    setSeconds(input.target.value)
+    setSeconds(Number(input.target.value))
     setPrint(false)
   }
 
@@ -52,6 +53,7 @@ function UserTimerInput() {
             name="minutes"
             min="1"
             max="59"
+            //value={minutes}
             required
             onChange={getMinuteInput}
           />
@@ -63,6 +65,7 @@ function UserTimerInput() {
             name="seconds"
             min="1"
             max="59"
+            //value={seconds}
             required
             onChange={getSecondInput}
           />
@@ -77,7 +80,12 @@ function UserTimerInput() {
         timerMinutes={print ? minutes : 0}
         timerSeconds={print ? seconds : 0}
       />
-      <StartTimer />
+      <StartTimer
+        seconds={seconds}
+        minutes={minutes}
+        setMinutes={setMinutes}
+        setSeconds={setSeconds}
+      />
     </div>
   )
 }
