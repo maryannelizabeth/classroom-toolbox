@@ -2,18 +2,18 @@ import React from 'react'
 
 function StartTimer({ seconds, setSeconds, minutes, setMinutes }) {
   function updateCountdown() {
-    // if (minutes == 0 && seconds == 0) {
-    //   setMinutes('00') && setSeconds('00')
-    // } else
     if (seconds == 0) {
-      console.log('sero')
       seconds = 59
+      setMinutes(minutes--)
     } else if (seconds != 0) {
-      console.log('not zero')
       setSeconds(seconds--)
     }
-
-    console.log(seconds)
+    // minutes = seconds * 60
+    // if (minutes != 0) {
+    //   setMinutes(minutes--)
+    // } else if (minutes == 0) {
+    //   setMinutes(0)
+    // }
   }
   let startClick = () => {
     updateCountdown()

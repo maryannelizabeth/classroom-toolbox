@@ -3,7 +3,7 @@ import TimerDisplay from './TimerDisplay'
 import StartTimer from './StartTimer'
 
 function UserTimerInput() {
-  const [minutes, setMinutes] = useState(0)
+  let [minutes, setMinutes] = useState(0)
   let [seconds, setSeconds] = useState(0)
 
   const [print, setPrint] = useState(false)

@@ -486,18 +486,18 @@ function StartTimer(_ref) {
       setMinutes = _ref.setMinutes;
 
   function updateCountdown() {
-    // if (minutes == 0 && seconds == 0) {
-    //   setMinutes('00') && setSeconds('00')
-    // } else
     if (seconds == 0) {
-      console.log('sero');
       seconds = 59;
+      setMinutes(minutes--);
     } else if (seconds != 0) {
-      console.log('not zero');
       setSeconds(seconds--);
-    }
+    } // minutes = seconds * 60
+    // if (minutes != 0) {
+    //   setMinutes(minutes--)
+    // } else if (minutes == 0) {
+    //   setMinutes(0)
+    // }
 
-    console.log(seconds);
   }
 
   var startClick = function startClick() {
@@ -530,6 +530,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var TimerDisplay = function TimerDisplay(props) {
+  console.log(props);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
     className: "timer-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
