@@ -3,21 +3,14 @@ import TimerDisplay from './TimerDisplay'
 import StartTimer from './StartTimer'
 
 function UserTimerInput() {
-  // const [hours, setHours] = useState(0)
   const [minutes, setMinutes] = useState(0)
   let [seconds, setSeconds] = useState(0)
-  // const time = { seconds, setSeconds, minutes, setMinutes }
 
   const [print, setPrint] = useState(false)
 
-  // function getHourInput(hourInput) {
-  //   setHours(hourInput.target.value)
-  //   console.log(hourInput)
-  //   setPrint(false)
-  // }
   function getMinuteInput(minuteInput) {
     setMinutes(Number(minuteInput.target.value))
-    //  console.log(minuteInput)
+
     setPrint(false)
   }
   function getSecondInput(input) {
@@ -35,17 +28,6 @@ function UserTimerInput() {
     <div>
       <h1>Form</h1>
       <form className="form" action="">
-        {/* <label>
-          Hours:
-          <input
-            type="number"
-            name="hours"
-            min="1"
-            max="12"
-            required
-            onChange={getHourInput}
-          />
-        </label> */}
         <label>
           Minutes:
           <input
@@ -53,7 +35,6 @@ function UserTimerInput() {
             name="minutes"
             min="1"
             max="59"
-            //value={minutes}
             required
             onChange={getMinuteInput}
           />
@@ -65,7 +46,6 @@ function UserTimerInput() {
             name="seconds"
             min="1"
             max="59"
-            //value={seconds}
             required
             onChange={getSecondInput}
           />
@@ -76,7 +56,6 @@ function UserTimerInput() {
         </button>
       </form>
       <TimerDisplay
-        //timerHours={print ? hours : 0}
         timerMinutes={print ? minutes : 0}
         timerSeconds={print ? seconds : 0}
       />

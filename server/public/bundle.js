@@ -487,15 +487,12 @@ function StartTimer(_ref) {
 
   function updateCountdown() {
     setSeconds(seconds--);
-    console.log(seconds); // let seconds = seconds < 10 ? '0' + seconds : seconds
-    // seconds--
-    // console.log(seconds)
+    console.log(seconds);
   }
 
   var startClick = function startClick() {
     updateCountdown();
-    setInterval(updateCountdown, 1000); // need to on click update inner HTML to count down from the user input
-
+    setInterval(updateCountdown, 1000);
     console.log('clicked start click');
   };
 
@@ -520,10 +517,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
- //import UserTimerInput from './UserTimerInput'
+
 
 var TimerDisplay = function TimerDisplay(props) {
-  var countdownEl = document.getElementById('countdown');
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
     className: "timer-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
@@ -538,7 +534,6 @@ var TimerDisplay = function TimerDisplay(props) {
 };
 
 TimerDisplay.defaultProps = {
-  // timerHours: '00',
   timerMinutes: '00',
   timerSeconds: '00'
 };
@@ -642,7 +637,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function UserTimerInput() {
-  // const [hours, setHours] = useState(0)
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState2 = _slicedToArray(_useState, 2),
       minutes = _useState2[0],
@@ -651,22 +645,15 @@ function UserTimerInput() {
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState4 = _slicedToArray(_useState3, 2),
       seconds = _useState4[0],
-      setSeconds = _useState4[1]; // const time = { seconds, setSeconds, minutes, setMinutes }
-
+      setSeconds = _useState4[1];
 
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState6 = _slicedToArray(_useState5, 2),
       print = _useState6[0],
-      setPrint = _useState6[1]; // function getHourInput(hourInput) {
-  //   setHours(hourInput.target.value)
-  //   console.log(hourInput)
-  //   setPrint(false)
-  // }
-
+      setPrint = _useState6[1];
 
   function getMinuteInput(minuteInput) {
-    setMinutes(Number(minuteInput.target.value)); //  console.log(minuteInput)
-
+    setMinutes(Number(minuteInput.target.value));
     setPrint(false);
   }
 
@@ -688,24 +675,21 @@ function UserTimerInput() {
     type: "number",
     name: "minutes",
     min: "1",
-    max: "59" //value={minutes}
-    ,
+    max: "59",
     required: true,
     onChange: getMinuteInput
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Seconds:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "number",
     name: "seconds",
     min: "1",
-    max: "59" //value={seconds}
-    ,
+    max: "59",
     required: true,
     onChange: getSecondInput
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     type: "submit",
     value: "submit",
     onClick: clickHandler
-  }, "Set Time!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TimerDisplay__WEBPACK_IMPORTED_MODULE_1__["default"] //timerHours={print ? hours : 0}
-  , {
+  }, "Set Time!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TimerDisplay__WEBPACK_IMPORTED_MODULE_1__["default"], {
     timerMinutes: print ? minutes : 0,
     timerSeconds: print ? seconds : 0
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_StartTimer__WEBPACK_IMPORTED_MODULE_2__["default"], {
