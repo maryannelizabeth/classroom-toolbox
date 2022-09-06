@@ -486,9 +486,10 @@ function StartTimer(_ref) {
       setMinutes = _ref.setMinutes;
 
   function updateCountdown() {
+    setMinutes(minutes--);
+
     if (seconds == 0) {
-      seconds = 59;
-      setMinutes(minutes--);
+      seconds = 10;
     } else if (seconds != 0) {
       setSeconds(seconds--);
     } // minutes = seconds * 60
@@ -506,10 +507,12 @@ function StartTimer(_ref) {
     console.log('clicked start click');
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "startCountdownButton"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     type: "button",
     onClick: startClick
-  }, "Start countdown");
+  }, "Start Countdown!"));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StartTimer);
@@ -679,36 +682,50 @@ function UserTimerInput() {
     setPrint(true);
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Form"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "userInputTimerDiv"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "userInputTimerForm"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
     className: "form",
     action: ""
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Minutes:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "labelsDiv"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    className: "MinutesLabel"
+  }, "Minutes:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "number",
     name: "minutes",
     min: "1",
     max: "59",
     required: true,
     onChange: getMinuteInput
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Seconds:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    className: "secondsLabel"
+  }, "Seconds:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "number",
     name: "seconds",
     min: "1",
     max: "59",
     required: true,
     onChange: getSecondInput
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "setTimeButtonDiv"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: "setTimeButton",
     type: "submit",
     value: "submit",
     onClick: clickHandler
-  }, "Set Time!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TimerDisplay__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    timerMinutes: print ? minutes : 0,
+  }, "Set Time")))), ' '), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TimerDisplay__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    timerMinutes: print ? minutes : 0 // if something is less than 10 display 0+print seconds
+    ,
     timerSeconds: print ? seconds : 0
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_StartTimer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_StartTimer__WEBPACK_IMPORTED_MODULE_2__["default"], {
     seconds: seconds,
     minutes: minutes,
     setMinutes: setMinutes,
     setSeconds: setSeconds
-  }));
+  })));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UserTimerInput);

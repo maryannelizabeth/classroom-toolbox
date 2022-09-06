@@ -178,6 +178,52 @@ a{
     
     }
 
+   /************   TIMER USER INPUT COMPONENT  ******************/ 
+    .userInputTimerDiv{
+      width: 100%;
+  height: auto;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+    }
+    .userInputTimerForm{
+
+    }
+
+    .secondsLabel{
+      flex-direction: row;
+      justify-content: space-around;
+      flex-flow: wrap;
+      text-align: center;
+      margin: 20px;
+    }
+
+    .minutesLabel{
+      flex-direction: row;
+      justify-content: space-around;
+      flex-flow: wrap;
+      text-align: center;
+      margin: 20px;
+    }
+
+    .setTimeButtonDiv{
+      flex-direction: row;
+      justify-content: space-around;
+      flex-flow: wrap;
+      text-align: center;
+      margin: 20px;
+    }
+
+    .startCountdownButton{
+      flex-direction: row;
+      justify-content: space-around;
+      flex-flow: wrap;
+      text-align: center;
+      margin: 50px;
+    }
+
+
   /* @media (768px){
       .diceDiv {
         width:90%;

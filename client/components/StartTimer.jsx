@@ -2,9 +2,9 @@ import React from 'react'
 
 function StartTimer({ seconds, setSeconds, minutes, setMinutes }) {
   function updateCountdown() {
+    setMinutes(minutes--)
     if (seconds == 0) {
-      seconds = 59
-      setMinutes(minutes--)
+      seconds = 10
     } else if (seconds != 0) {
       setSeconds(seconds--)
     }
@@ -22,9 +22,11 @@ function StartTimer({ seconds, setSeconds, minutes, setMinutes }) {
     console.log('clicked start click')
   }
   return (
-    <button type="button" onClick={startClick}>
-      Start countdown
-    </button>
+    <div className="startCountdownButton">
+      <button type="button" onClick={startClick}>
+        Start Countdown!
+      </button>
+    </div>
   )
 }
 

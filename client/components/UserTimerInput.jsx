@@ -25,47 +25,64 @@ function UserTimerInput() {
   }
 
   return (
-    <div>
-      <h1>Form</h1>
-      <form className="form" action="">
-        <label>
-          Minutes:
-          <input
-            type="number"
-            name="minutes"
-            min="1"
-            max="59"
-            required
-            onChange={getMinuteInput}
-          />
-        </label>
-        <label>
-          Seconds:
-          <input
-            type="number"
-            name="seconds"
-            min="1"
-            max="59"
-            required
-            onChange={getSecondInput}
-          />
-        </label>
+    <>
+      <div className="userInputTimerDiv">
+        <div className="userInputTimerForm">
+          <form className="form" action="">
+            <div className="labelsDiv">
+              <label className="MinutesLabel">
+                Minutes:
+                <input
+                  type="number"
+                  name="minutes"
+                  min="1"
+                  max="59"
+                  required
+                  onChange={getMinuteInput}
+                />
+              </label>
 
-        <button type="submit" value="submit" onClick={clickHandler}>
-          Set Time!
-        </button>
-      </form>
-      <TimerDisplay
-        timerMinutes={print ? minutes : 0}
-        timerSeconds={print ? seconds : 0}
-      />
-      <StartTimer
-        seconds={seconds}
-        minutes={minutes}
-        setMinutes={setMinutes}
-        setSeconds={setSeconds}
-      />
-    </div>
+              <label className="secondsLabel">
+                Seconds:
+                <input
+                  type="number"
+                  name="seconds"
+                  min="1"
+                  max="59"
+                  required
+                  onChange={getSecondInput}
+                />
+              </label>
+            </div>
+
+            <div className="setTimeButtonDiv">
+              <button
+                className="setTimeButton"
+                type="submit"
+                value="submit"
+                onClick={clickHandler}
+              >
+                Set Time
+              </button>
+            </div>
+          </form>
+        </div>{' '}
+      </div>
+      <div>
+        <TimerDisplay
+          timerMinutes={print ? minutes : 0} // if something is less than 10 display 0+print seconds
+          timerSeconds={print ? seconds : 0}
+        />
+      </div>
+      <div>
+        <StartTimer
+          seconds={seconds}
+          minutes={minutes}
+          setMinutes={setMinutes}
+          setSeconds={setSeconds}
+        />
+      </div>
+    </>
   )
 }
 
