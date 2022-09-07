@@ -486,9 +486,8 @@ function StartTimer(_ref) {
       setMinutes = _ref.setMinutes;
 
   function updateCountdown() {
-    setMinutes(minutes--);
-
     if (seconds == 0) {
+      setMinutes(minutes--);
       seconds = 10;
     } else if (seconds != 0) {
       setSeconds(seconds--);
@@ -533,7 +532,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var TimerDisplay = function TimerDisplay(props) {
-  console.log(props);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
     className: "timer-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {

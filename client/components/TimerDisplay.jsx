@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 
 const TimerDisplay = (props) => {
-  console.log(props)
   return (
     <Fragment>
       <section className="timer-container">

@@ -178,6 +178,8 @@ a{
     
     }
 
+   
+
    /************   TIMER USER INPUT COMPONENT  ******************/ 
     .userInputTimerDiv{
       width: 100%;
@@ -187,9 +189,7 @@ a{
   justify-content: space-around;
   flex-flow: wrap;
     }
-    .userInputTimerForm{
-
-    }
+   
 
     .secondsLabel{
       flex-direction: row;
@@ -213,6 +213,7 @@ a{
       flex-flow: wrap;
       text-align: center;
       margin: 20px;
+      padding: 20px;
     }
 
     .startCountdownButton{
