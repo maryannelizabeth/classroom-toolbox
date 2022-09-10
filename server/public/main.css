@@ -76,6 +76,18 @@ a{
     transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
 
+
+  /**** Footer *******/
+  .footer{
+    display: flex;
+    width: 100%;
+    font-size: 8px;
+    text-align: center;
+    margin-top: 150px;
+  }
+  .footerA{
+    color: #FFD8A9;
+  }
   
   /******* Dice home page ***********/
 

@@ -3,8 +3,8 @@ import React from 'react'
 function StartTimer({ seconds, setSeconds, minutes, setMinutes }) {
   function updateCountdown() {
     if (seconds == 0) {
-      setMinutes(minutes--)
       seconds = 10
+      setMinutes(minutes--)
     } else if (seconds != 0) {
       setSeconds(seconds--)
     }

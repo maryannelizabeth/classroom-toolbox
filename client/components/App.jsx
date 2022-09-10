@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import Header from './Header'
 import Home from './Home'
-import Nav from './Nav'
+
 import DiceHome from './Dice'
 import RollOneDice from './RollOneDice'
 import RollTwoDice from './RollTwoDice'
